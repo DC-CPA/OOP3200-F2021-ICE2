@@ -17,10 +17,12 @@ public:
     CartesianPoint(const CartesianPoint& point2);
 
     /*Operator Overloads*/
-    double operator-(const CartesianPoint& point_to) const;  //operator minus
+    CartesianPoint operator+(const CartesianPoint& point2) const;//vector addition ??operator addition
+
+	double operator-(const CartesianPoint& point_to) const;  //operator minus
     bool operator==(const CartesianPoint& other_point) const; //operator comparison
 
-    CartesianPoint operator+(const CartesianPoint& point2) const;//vector addition ??operator addition
+    CartesianPoint operator=(const CartesianPoint& new_point);
 
     /* Friend Overloads*/
     friend std::ostream& operator<<(std::ostream& out, const CartesianPoint& point);

@@ -36,17 +36,27 @@ bool CartesianPoint::operator==(const CartesianPoint& other_point) const
     return ((GetX() == other_point.GetX()) && (GetY() == other_point.GetY()));
 }
 
+CartesianPoint CartesianPoint::operator=(const CartesianPoint& new_point)
+{
+    SetX(new_point.GetX());
+    SetY(new_point.GetY());
+
+    return *this;
+}
+
 CartesianPoint CartesianPoint::operator+(const CartesianPoint& point2) const
 {
     CartesianPoint tempPoint;
     tempPoint.SetX((*this).GetX() + point2.GetX());     //*this pointer
     tempPoint.SetY((*this).GetY() + point2.GetY());     //*this pointer
+
     return tempPoint;
 }
 
 std::ostream& operator<<(std::ostream& out, const CartesianPoint& point)
 {
     out << point.ToString();
+
     return out;
 }
 
