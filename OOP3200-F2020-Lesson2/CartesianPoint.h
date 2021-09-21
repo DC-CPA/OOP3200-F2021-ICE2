@@ -22,6 +22,10 @@ public:
 
     CartesianPoint operator+(const CartesianPoint& point2) const;//vector addition ??operator addition
 
+    /* Friend Overloads*/
+    friend std::ostream& operator<<(std::ostream& out, const CartesianPoint& point);
+    friend std::istream& operator>>(std::istream& in, CartesianPoint& point);
+
     // --------------------------------------------------------------------------------
     /* Accessors:  query the object
    
@@ -57,8 +61,8 @@ public:
 
 private:
     // private data members for the dimensions of the point
-    int myX{}; // x-axis (horizontal) value
-    int myY{};  // y-axis (vertical) value
+    int m_x{}; // x-axis (horizontal) value
+    int m_y{};  // y-axis (vertical) value
 };
 
 
